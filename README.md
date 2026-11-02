@@ -14,17 +14,9 @@ BnsMacro.exe
 
 通常应选择最新的正式版本。回退到旧版本前，请先确认配置格式和功能是否兼容。
 
-## 与主项目的关系
+发布流程会生成带版本号的本地发布目录、上传用的 `BnsMacro.exe`、更新清单和更新说明。选择上传后，在本仓库创建或更新对应的 `v<版本号>` Release。
 
-| 仓库 | 用途 |
-| --- | --- |
-| [`restoflife/BnsMacro`](https://github.com/restoflife/BnsMacro) | 主程序、独立更新器、构建与发布脚本 |
-| [`restoflife/limuxuan-update`](https://github.com/restoflife/limuxuan-update) | 正式版本标签和可下载的程序附件 |
-| [`restoflife/BnsMacroThemes`](https://github.com/restoflife/BnsMacroThemes) | 在线过图主题、目录与完整性清单 |
-
-主项目的发布脚本会生成带版本号的本地发布目录、上传用的 `BnsMacro.exe`、更新清单和更新说明。选择上传后，脚本在本仓库创建或更新对应的 `v<版本号>` Release。
-
-更新清单由主程序从独立地址读取；本仓库负责承载清单所指向的 GitHub Release 附件，不把本地生成的 `update.json` 作为仓库文件提交。
+更新清单从独立地址提供；本仓库只承载清单所指向的 GitHub Release 附件，不把本地生成的 `update.json` 作为仓库文件提交。
 
 ## 完整性与更新规则
 
@@ -35,6 +27,6 @@ BnsMacro.exe
 
 ## 维护说明
 
-版本发布应从 `BnsMacro` 主仓库的发布脚本执行，避免手工上传与项目版本、更新说明或 SHA-256 不一致。覆盖已有版本前，应先确认附件和 Release 说明都属于同一构建结果。
+版本发布应通过既定发布脚本执行，避免手工上传与项目版本、更新说明或 SHA-256 不一致。覆盖已有版本前，应先确认附件和 Release 说明都属于同一构建结果。
 
-此仓库仅用于版本分发；功能说明、运行条件、构建步骤和问题排查请以主项目 README 为准。
+此仓库仅用于版本分发，不提供功能说明、源码或主题资源。
